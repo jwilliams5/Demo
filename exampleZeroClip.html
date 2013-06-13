@@ -4,16 +4,18 @@
       #d_clip_button {
         text-align:center;
         border:1px solid black;
-        background-color:#ccc;
+        background-color:orange;
         margin:10px; padding:10px;
       }
-      #d_clip_button.zeroclipboard-is-hover { background-color:#eee; }
-      #d_clip_button.zeroclipboard-is-active { background-color:#aaa; }
+      #d_clip_button.zeroclipboard-is-hover { background-color:blue; }
+      #d_clip_button.zeroclipboard-is-active { background-color:green; }
     </style>
     <script type="text/javascript" src="ZeroClipboard.js"></script>
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
       <div>
+      <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
       <textarea id="clipboard_area" rol="40" col="55">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
@@ -26,11 +28,10 @@
       </div>
       <br/>
       <br/>
-      <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
   
     <script language="JavaScript">
       var clip = new ZeroClipboard(document.getElementById('d_clip_button'), {
-      moviePath: "javascripts/ZeroClipboard.swf"
+      moviePath: "https://github.com/jwilliams5/Demo/ZeroClipboard.swf"
     });
 
       clip.on( 'load', function(client) {
