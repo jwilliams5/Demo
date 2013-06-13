@@ -197,7 +197,7 @@ trustedDomains: null,
 text: null,
 hoverClass: "zeroclipboard-is-hover",
 activeClass: "zeroclipboard-is-active",
-allowScriptAccess: "sameDomain",
+allowScriptAccess: "always",
 useNoCache: true,
 amdModuleId: null
 };
