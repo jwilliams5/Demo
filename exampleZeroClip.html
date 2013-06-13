@@ -16,7 +16,7 @@
 
     <div>
       <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
-    <textarea id="clipboard_area" rol="20" col"15">
+    <textarea id="clipboard_area" rol="20" col="15">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
       ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -27,7 +27,7 @@
     </div>
 
     <script language="JavaScript">
-      var clip = new ZeroClipboard();
+      var clip = new ZeroClipboard(document.getElementById('d_clip_button'));
 
       clip.on( 'load', function(client) {
         // alert( "movie is loaded" );
