@@ -15,7 +15,7 @@
   </head>
   <body>
       <script type="text/javascript" src="ZeroClipboard.js"></script>
-      <button id="d_clip_button" data-clipboard-text="Copy me!"> Copy To Clipboard</button>
+      <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
       
         <br/>
         <br/>
@@ -31,22 +31,26 @@
         </textarea>
   
     <script language="JavaScript">
-      var clip = new ZeroClipboard($('#d_clip_button'));
+      $(document).ready(function() {
+        var clip = new ZeroClipboard($("#d_clip_button"), {
+          moviePath: "ZeroClipboard.swf"
+        } );
 
-      clip.on( 'load', function(client) {
-        alert( "movie is loaded" );
-      } );
+        clip.on( 'load', function(client) {
+          alert( "movie is loaded" );
+        } );
 
-      clip.on( 'complete', function(client, args) {
-        alert("Copied text to clipboard: " + args.text );
-      } );
+        clip.on( 'complete', function(client, args) {
+          alert("Copied text to clipboard: " + args.text );
+        } );
 
-      clip.on( 'noflash', function ( client, args ) {
-        alert("You don't support flash");
-      } );
+        clip.on( 'noflash', function ( client, args ) {
+          alert("You don't support flash");
+        } );
     
-      clip.on( 'wrongflash', function ( client, args ) {
-        alert("Your flash is too old " + args.flashVersion);
+        clip.on( 'wrongflash', function ( client, args ) {
+          alert("Your flash is too old " + args.flashVersion);
+        } );
       } );
     </script>
   </body>
