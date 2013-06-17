@@ -35,7 +35,7 @@
     <script type="text/javascript" src="ZeroClipboard.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        var clip = new ZeroClipboard($("#d_clip_button"), {
+        var clip = new ZeroClipboard(document.getElementById('d_clip_button'), {
           moviePath: "javascripts/ZeroClipboard.swf"
         } );
 
@@ -47,13 +47,7 @@
           alert("Copied text to clipboard: " + args.text );
         } );
 
-        clip.on( 'noflash', function ( client, args ) {
-          alert("You don't support flash");
-        } );
-    
-        clip.on( 'wrongflash', function ( client, args ) {
-          alert("Your flash is too old " + args.flashVersion);
-        } );
+        clip.glue( document.getElementById('d_clip_button') );
       } );
     </script>
   </body>
