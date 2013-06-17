@@ -32,16 +32,16 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </textarea>
         
-    <script type="text/javascript" src="ZeroClipboard.js"></script>
+    <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        var clip = new ZeroClipboard(document.getElementById('d_clip_button'), {
+        var clip = new ZeroClipboard($("#d_clip_button"), {
           moviePath: "javascripts/ZeroClipboard.swf"
         } );
         
         alert("inside javascript function now");
         
-        clip.glue( document.getElementById('d_clip_button') );
+      //  clip.glue( $("#d_clip_button")); 
 
         clip.on( 'load', function(client) {
           alert( "movie is loaded" );
