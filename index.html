@@ -11,10 +11,8 @@
       #d_clip_button.zeroclipboard-is-hover { background-color:#eee; }
       #d_clip_button.zeroclipboard-is-active { background-color:#aaa; }
     </style>
-     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
-      <script type="text/javascript" src="ZeroClipboard.js"></script>
       <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
       
         <br/>
@@ -29,7 +27,8 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum.
         </textarea>
-  
+        
+    <script type="text/javascript" src="ZeroClipboard.js"></script>
     <script language="JavaScript">
       $(document).ready(function() {
         var clip = new ZeroClipboard($("#d_clip_button"), {
