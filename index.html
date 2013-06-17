@@ -8,13 +8,13 @@
         background-color:orange;
         margin:10px; padding:10px;
       }
-      #d_clip_button.zeroclipboard-is-hover { background-color:blue; }
-      #d_clip_button.zeroclipboard-is-active { background-color:green; }
+      #d_clip_button.zeroclipboard-is-hover { background-color:#eee; }
+      #d_clip_button.zeroclipboard-is-active { background-color:#aaa; }
     </style>
-    <script type="text/javascript" src="ZeroClipboard.js"></script>
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
+      <script type="text/javascript" src="ZeroClipboard.js"></script>
       <button id="d_clip_button" data-clipboard-text="Copy me!"> Copy To Clipboard</button>
       
         <br/>
@@ -30,9 +30,8 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </textarea>
   
-    <script type="text/javascript">
-      var clip = new ZeroClipboard($("#d_clip_button"), {
-        moviePath: "ZeroClipboard.swf" } );
+    <script language="JavaScript">
+      var clip = new ZeroClipboard($('#d_clip_button'));
 
       clip.on( 'load', function(client) {
         alert( "movie is loaded" );
