@@ -35,24 +35,25 @@
         
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() {
-        var clip = new ZeroClipboard($("#d_clip_button"), {
-          moviePath: "javascripts/ZeroClipboard.swf"
-        } );
-        
-        alert("inside javascript function now");
-        
-      //  clip.glue( $("#d_clip_button")); 
-
-        clip.on( 'load', function(client) {
-          alert( "movie is loaded" );
-        } );
-
-        clip.on( 'complete', function(client, args) {
-          alert("Copied text to clipboard: " + args.text );
-        } );
-
-      } );
+        window.addEvent("load",function() {
+			
+			setTimeout(function() {
+				//set path
+				ZeroClipboard.setMoviePath('http://davidwalsh.name/dw-content/ZeroClipboard.swf');
+				//create client
+				var clip = new ZeroClipboard.Client();
+				//event
+				clip.addEventListener('mousedown',function() {
+					clip.setText(document.getElementById('box-content').value);
+				});
+				clip.addEventListener('complete',function(client,text) {
+					alert('copied: ' + text);
+				});
+				//glue it to the button
+				clip.glue('copy');
+			}, 2000);
+			
+		});
     </script>
   </body>
   </html>
