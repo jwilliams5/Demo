@@ -44,13 +44,13 @@
 				var clip = new ZeroClipboard.Client();
 				//event
 				clip.addEventListener('mousedown',function() {
-					clip.setText(document.getElementById('box-content').value);
+					clip.setText(document.getElementById('clipboard_area').value);
 				});
 				clip.addEventListener('complete',function(client,text) {
 					alert('copied: ' + text);
 				});
 				//glue it to the button
-				clip.glue('copy');
+				clip.glue('d_clip_button');
 			}, 2000);
 			
 		});
