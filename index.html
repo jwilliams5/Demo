@@ -11,7 +11,7 @@
    /*   #d_clip_button.zeroclipboard-is-hover { background-color:blue; }
       #d_clip_button.zeroclipboard-is-active { background-color:green; }*/
     </style>
-    <script type="text/javascript" src="javascript/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="ZeroClipboard.js"></script>
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
@@ -31,8 +31,8 @@
         </textarea>
   
     <script type="text/javascript">
-      var clip = new ZeroClipboard($("button#my-button"), {
-        moviePath: "javascript/ZeroClipboard.swf" } );
+      var clip = new ZeroClipboard($("d_clip_button"), {
+        moviePath: "ZeroClipboard.swf" } );
 
       clip.on( 'load', function(client) {
         alert( "movie is loaded" );
