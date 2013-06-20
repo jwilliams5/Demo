@@ -65,7 +65,7 @@
 				var clip = new ZeroClipboard.Client();
 				//event
 				clip.addEventListener('mousedown',function() {
-					clip.setText(document.getElementById('clipboard_area').value);
+					clip.setText(document.getElementById('math').value);
 				});
 				clip.addEventListener('complete',function(client,text) {
 					alert('copied: ' + text);
