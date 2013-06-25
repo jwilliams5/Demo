@@ -57,7 +57,8 @@
       $(document).ready(function(){
 	$('button#d_clip_button').zclip({
 		path:'javascripts/ZeroClipboard.swf',
-		copy:$('div#math1').text()
+		copy:function() {
+			return $(this).closest('math').find('annotation[encoding="application/x-tex"]').text();
 	});
      });
 
