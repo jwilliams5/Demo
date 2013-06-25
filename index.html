@@ -17,8 +17,7 @@
   </head>
   <body>
   
-    	<button id="d_clip_button"> Copy To Clipboard</button>
-        <div id="math-1">
+        <div id="math">
 		<div id="S3.p2" class="ltx_para">
 			<p id="S3.p2.1" class="ltx_p">The probability of getting <math id="S3.p2.1.m1.1" class="ltx_Math" alttext="\(k\)" display="inline" xref="S3.p2.1.m1.1.cmml"><semantics id="S3.p2.1.m1.1a" xref="S3.p2.1.m1.1.cmml"><mi id="S3.p2.1.m1.1.1.m1.1.1" xref="S3.p2.1.m1.1.1.m1.1.1.cmml">k</mi><annotation-xml id="S3.p2.1.m1.1.cmml" encoding="MathML-Content" xref="S3.p2.1.m1.1"><ci id="S3.p2.1.m1.1.1.m1.1.1.cmml" xref="S3.p2.1.m1.1.1.m1.1.1">k</ci></annotation-xml><annotation id="S3.p2.1.m1.1b" encoding="application/x-tex" xref="S3.p2.1.m1.1.cmml">\(k\)</annotation></semantics></math> heads when flipping <math id="S3.p2.1.m2.1" class="ltx_Math" alttext="\(n\)" display="inline" xref="S3.p2.1.m2.1.cmml"><semantics id="S3.p2.1.m2.1a" xref="S3.p2.1.m2.1.cmml"><mi id="S3.p2.1.m2.1.1.m1.1.1" xref="S3.p2.1.m2.1.1.m1.1.1.cmml">n</mi><annotation-xml id="S3.p2.1.m2.1.cmml" encoding="MathML-Content" xref="S3.p2.1.m2.1"><ci id="S3.p2.1.m2.1.1.m1.1.1.cmml" xref="S3.p2.1.m2.1.1.m1.1.1">n</ci></annotation-xml><annotation id="S3.p2.1.m2.1b" encoding="application/x-tex" xref="S3.p2.1.m2.1.cmml">\(n\)</annotation></semantics></math> coins is:</p>
 			<table id="S3.Ex4" class="ltx_equation">
@@ -32,9 +31,10 @@
 		</div>
 	</div> 
 	
-		<button id="d_clip_button"> Copy To Clipboard</button>
+	<button class="d_clip_button"> Copy To Clipboard</button>
 	
-	<div id="math-2">
+	
+	<div id="math">
         	 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 			  <mrow>
 			    <mo>[</mo>
@@ -80,7 +80,7 @@
 			  <mi mathvariant="normal">&#x03A8;<!-- Ψ --></mi>
 			  </math>
         </div>
-      
+      <button class="d_clip_button"> Copy To Clipboard</button>
       		
         
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
@@ -92,7 +92,7 @@
 		//	return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
 		//	var id =$(this).attr('id');
 		//	var copynow=$('#math-'+id).text();
-			return $(this).closest("div").find("#math-");
+			return $(this).prev('div.math').text();
 		}
 	});
      });
