@@ -6,7 +6,7 @@
     <title>ZeroClipboard</title>
     <script src="javascripts/scale.fix.js"></script>
     <style type="text/css">
-      #d_clip_button {
+      .d_clip_button {
         text-align:center;
         border:1px solid black;
         background-color:orange;
@@ -16,6 +16,8 @@
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
+  
+  	<button class="d_clip_button"> Copy To Clipboard</button>
   
         <div class="math">
 		<div id="S3.p2" class="ltx_para">
@@ -32,7 +34,6 @@
 	</div> 
 	
 	<button class="d_clip_button"> Copy To Clipboard</button>
-	
 	
 	<div class="math">
         	 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -80,19 +81,18 @@
 			  <mi mathvariant="normal">&#x03A8;<!-- Ψ --></mi>
 			  </math>
         </div>
-      <button class="d_clip_button"> Copy To Clipboard</button>
       		
         
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-	$('.d_clip_button').zclip({
+	$(".d_clip_button").zclip({
 		path:'javascripts/ZeroClipboard.swf',
 		copy:function() {
 		//	return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
 		//	var id =$(this).attr('id');
 		//	var copynow=$('#math-'+id).text();
-			return $('div').prev('.math').text();
+			return $("div").prev(".math").text();
 		}
 	});
      });
