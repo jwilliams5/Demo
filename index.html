@@ -12,14 +12,11 @@
         background-color:orange;
         margin:3px; padding:3px;
       }
-      #d_clip_button.zeroclipboard-is-hover { background-color:#eee; }
-      #d_clip_button.zeroclipboard-is-active { background-color:#aaa; }
     </style>
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
   </head>
   <body>
-      <button id="d_clip_button" data-clipboard-target="clipboard_area"> Copy To Clipboard</button>
+      <button id="d_clip_button"> Copy To Clipboard</button>
       
         <br/>
         <br/>
@@ -57,25 +54,13 @@
         
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
     <script type="text/javascript">
-        window.addEvent("load",function() {
-			
-			setTimeout(function() {
-				//set path
-				ZeroClipboard.setMoviePath('javascripts/ZeroClipboard.swf');
-				//create client
-				var clip = new ZeroClipboard.Client();
-				//event
-				clip.addEventListener('mousedown',function() {
-					clip.setText(document.getElementById('math').value);
-				});
-				clip.addEventListener('complete',function(client,text) {
-					alert('copied: ' + text);
-				});
-				//glue it to the button
-				clip.glue('d_clip_button');
-			}, 2000);
-			
-		});
+      $(document).ready(function(){
+	$('button#d_clip_button').zclip({
+		path:'javasctipts/ZeroClipboard.swf',
+		copy:$('p#math').text()
+	});
+     });
+
     </script>
   </body>
   </html>
