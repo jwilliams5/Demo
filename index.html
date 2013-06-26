@@ -30,7 +30,7 @@
 			</tbody></table>
 		</div>
 	</div>
-	<button class="d_clip_button1"> Copy To Clipboard</button>
+	<button clas="d_clip_button1"> Copy To Clipboard</button>
 	
 	<div class="math1">
         	 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -84,9 +84,9 @@
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-	$("button.d_clip_button1").zclip({
+	$(".d_clip_button1").zclip({
 		path:'javascripts/ZeroClipboard.swf',
-		copy: $(this).prev('div.math1').text(),
+		copy: $("div").prev(".math1").text(),
 		/*function() {
 			return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
 			var id =$(this).attr('id');
