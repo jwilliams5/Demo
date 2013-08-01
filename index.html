@@ -87,9 +87,8 @@
 	$("button#d_clip_button1").zclip({
 		path:'javascripts/ZeroClipboard.swf',
 		copy: $("div#math1").find('annotation[encoding="application/x-tex"]').text(),
-		afterCopy:function(){
+/*		afterCopy:function(){
 			$('div#math1').css('background','green');
-			alert()
 		}
 		/*function() {
 			return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
