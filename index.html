@@ -87,14 +87,8 @@
 	$("button#d_clip_button1").zclip({
 		path:'javascripts/ZeroClipboard.swf',
 		copy: $("div#math1").find('annotation[encoding="application/x-tex"]').text(),
-		beforeCopy:function(){
-			$('#callback-paragraph').css('background','yellow');
-			$(this).css('color','orange');
-			},
 		afterCopy:function(){
-			$('#callback-paragraph').css('background','green');
-			$(this).css('color','purple');
-			$(this).next('.check').show();
+			$('div#math1').css('background','green');
 		}
 		/*function() {
 			return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
