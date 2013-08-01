@@ -31,17 +31,17 @@
 		</div>
 	</div>
 	
-	<button class="d_clip_button1"> Copy To Clipboard</button>
+<!--	<button class="d_clip_button1"> Copy To Clipboard</button> 
 	
 	<div class="math1">
         	 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 			  <mrow>
 			    <mo>[</mo>
 			    <mo>&#x2212;<!-- − --></mo>
-			    <mfrac>
+<!--			    <mfrac>
 			      <msup>
 			        <mi class="MJX-variant">&#x210F;<!-- ℏ --></mi>
-			        <mn>2</mn>
+<!--			        <mn>2</mn>
 			      </msup>
 			      <mrow>
 			        <mn>2</mn>
@@ -51,11 +51,11 @@
 			    <mfrac>
 			      <msup>
 			        <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
-			        <mn>2</mn>
+<!--			        <mn>2</mn>
 			      </msup>
 			      <mrow>
 			        <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
-			        <msup>
+<!--			        <msup>
 			          <mi>x</mi>
 			          <mn>2</mn>
 			        </msup>
@@ -66,19 +66,19 @@
 			    <mo>]</mo>
 			  </mrow>
 			  <mi mathvariant="normal">&#x03A8;<!-- Ψ --></mi>
-			  <mo>=</mo>
+<!--			  <mo>=</mo>
 			  <mi>i</mi>
 			  <mi class="MJX-variant">&#x210F;<!-- ℏ --></mi>
-			  <mfrac>
+<!--			  <mfrac>
 			    <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
-			    <mrow>
+<!--			    <mrow>
 			      <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
-			      <mi>t</mi>
+<!--			      <mi>t</mi>
 			    </mrow>
 			  </mfrac>
 			  <mi mathvariant="normal">&#x03A8;<!-- Ψ --></mi>
-			  </math>
-        </p>
+<!--			  </math>
+        </p> -->
       	
         
     <script type="text/javascript" src="javascripts/ZeroClipboard.js"></script>
@@ -86,7 +86,16 @@
       $(document).ready(function(){
 	$("button#d_clip_button1").zclip({
 		path:'javascripts/ZeroClipboard.swf',
-		copy: $("div#math1").find('annotation[encoding="application/x-tex"]').text()
+		copy: $("div#math1").find('annotation[encoding="application/x-tex"]').text(),
+		beforeCopy:function(){
+			$('#callback-paragraph').css('background','yellow');
+			$(this).css('color','orange');
+			},
+		afterCopy:function(){
+			$('#callback-paragraph').css('background','green');
+			$(this).css('color','purple');
+			$(this).next('.check').show();
+		}
 		/*function() {
 			return $("div#math1").find('annotation[encoding="application/x-tex"]').text();
 			var id =$(this).attr('id');
